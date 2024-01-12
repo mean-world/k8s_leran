@@ -1,0 +1,15 @@
+#get all nodes label
+kubectl get nodes --show-labels
+
+#get target node label list
+kubectl label --list nodes "node_name"
+
+#add new label to target node
+kubectl label nodes "node name" "object"="any string"
+
+#overwrite label to target node label
+kubectl label --overwrite nodes kind-worker "object"="new string"
+
+#remove label to target node label
+kubectl label --overwrite nodes kind-worker "object"-
+

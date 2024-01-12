@@ -1,0 +1,10 @@
+ETCDCTL_API=3 etcdctl --cacert=/etc/kubernetes/pki/etcd/ca.crt --cert=/etc/kubernetes/pki/etcd/peer.crt --key=/etc/kubernetes/pki/etcd/peer.key --write-out=table --endpoints=42.51.80.221:2379,42.51.80.222:2379,42.51.80.223:2379 endpoint health
+
+#basic
+export ETCDCTL_API=3
+ETCDCTL_API=3 etcdctl --cacert=/etc/kubernetes/pki/etcd/ca.crt --cert=/etc/kubernetes/pki/etcd/peer.crt --key=/etc/kubernetes/pki/etcd/peer.key  --write-out=table --endpoints=172.18.0.2:2379,172.18.0.3:2379,172.18.0.4:2379 
+
+
+
+
+

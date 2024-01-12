@@ -1,0 +1,9 @@
+#Print how many nodes are ready
+kubectl get nodes |grep -w  -i ready |wc -l
+ex:3
+
+#print how many node taint status are noschedule
+kubectl describe node |grep -i NoSchedule |wc -l
+ex:1
+
+echo 2 >/"path"/"file_name".txt

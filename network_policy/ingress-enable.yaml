@@ -1,0 +1,12 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-all
+spec:
+  # 選擇所有的 pod
+  podSelector: {}
+  policyTypes:
+  - Ingress
+  # 允許所有從外面進來的網路流量
+  ingress:
+  - {}

@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: test
+  #namespace: test
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: test-demo
+  template:
+    metadata:
+      labels:
+        app: test-demo
+      #namespace: test
+    spec:
+      #nodeName: kind-worker 
+      containers:
+      - name: test
+        image: pear1798/pod_rbac_test:v1
+        command: ["sleep"]
+        args: ["10000000000"]
+        ports:
+        - containerPort: 8090
+  minReadySeconds: 5
+

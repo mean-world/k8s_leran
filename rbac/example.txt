@@ -1,0 +1,14 @@
+#create role for use pod "get, list, watch" in namesape default
+kubectl create role pod-reader --verb=get --verb=list --verb=watch --resource=pods
+
+#create cluster role for use pod "get, list, watch" in every namesape 
+kubectl create clusterrole pod-reader --verb=get,list,watch --resource=pods
+
+#create rolebinding binding with role
+kubectl create rolebinding read-pods --role=pod-reader --serviceaccount=default:default -n default
+
+#create rolebinding binding with clusterrole
+kubectl create rolebinding read-pods --clusterrole=pod-reader --serviceaccount=default:default -n default
+
+#create clusterrolebinding binding with clusterrole
+kubectl create clusterrolebinding read-pods --clusterrole=pod-reader  --serviceaccount=default:default
